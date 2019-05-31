@@ -24,6 +24,14 @@ class Instructor extends Person{
     grade(Student){
         return `${Student.name} receives a perfect score on ${this.favLanguage}`
     }
+    gamble(Student){
+            let number= Math.floor((Math.random() * 24) + 1);
+            //let plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+            let total = number +75  //* plusOrMinus ;
+             return total;
+            Student.grade.push(total);
+     }
+
 };
 
 
@@ -63,6 +71,7 @@ class Project_Manager extends Instructor{
 
 
 // OBJECTS 
+
   const elena = new Person({
     name: 'Elena',
     age: 30,
@@ -81,14 +90,15 @@ class Project_Manager extends Instructor{
     location: 'Denver',
   });
 
-
+                                                              // STUDENTS
   const pedro = new Student({
     name: 'Pedro',
     age: 37,
     location: 'Narnia',
     previousBackground: 'Mechanic',
     className: 'CS12',
-    favSubjects: ['Html', 'CSS', 'JavaScript']
+    favSubjects: ['Html', 'CSS', 'JavaScript'],
+    grade: 1
     });
 
   const jake = new Student({
@@ -97,7 +107,8 @@ class Project_Manager extends Instructor{
     location: 'Huston',
     previousBackground: 'Highschool',
     className: 'CS13',
-    favSubjects: ['Html', 'rubi', 'C++']
+    favSubjects: ['Html', 'rubi', 'C++'],
+    grade: 1
     });
 
   const  dora = new Student({
@@ -106,11 +117,12 @@ class Project_Manager extends Instructor{
     location: 'Seattle',
     previousBackground: 'Explorer',
     className: 'CS02',
-    favSubjects: ['cocoa', 'Java', 'Basic']
+    favSubjects: ['cocoa', 'Java', 'Basic'],
+    grade: 1
     });
   
-
-  const carlos = new Instructor({
+                                                            // INSTRUCTORS
+    const carlos = new Instructor({
     name: 'Carlos',
     location: 'Tampa',
     age: 42,
@@ -137,7 +149,7 @@ class Project_Manager extends Instructor{
     catchPhrase: ` work work work `
   });
 
-
+                                                            //PROJECT MANAGERS
   const dan = new Project_Manager({
     name: 'Dan',
     location: 'Ft Lauderdale',
@@ -182,7 +194,7 @@ class Project_Manager extends Instructor{
      console.log(pedro.sprintChallenge('CSS'))
      console.log(dan.standUp('webpt7_jeffery'))
      console.log(scotty.debugsCode(jake, 'HTML'));
-
+     console.log(carlos.gamble(pedro));
 
   
 
